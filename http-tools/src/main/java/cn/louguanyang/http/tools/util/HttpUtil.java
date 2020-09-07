@@ -38,7 +38,7 @@ public class HttpUtil {
     private static final String HTTPS = "https";
 
     static {
-        LayeredConnectionSocketFactory socketFactory = null;
+        LayeredConnectionSocketFactory socketFactory;
         try {
             socketFactory = new SSLConnectionSocketFactory(SSLContext.getDefault());
         } catch (NoSuchAlgorithmException e) {
@@ -60,7 +60,7 @@ public class HttpUtil {
         return HttpClients.custom().setConnectionManager(cm).build();
     }
 
-    public static String get(String url) {
+    public String get(String url) {
         // 配置请求超时时间
         RequestConfig requestConfig = RequestConfig.custom()
             .setConnectTimeout(TIME_OUT).setConnectionRequestTimeout(TIME_OUT)

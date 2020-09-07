@@ -1,7 +1,5 @@
 package cn.louguanyang.http.tools.util;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +11,7 @@ class HttpUtilTest {
 
     @Test
     void get() {
-        String rspMsg = HttpUtil.get("http://cip.cc");
+        String rspMsg = HttpUtil.getInstance().get("http://cip.cc");
         Assertions.assertNotNull(rspMsg);
     }
 }
